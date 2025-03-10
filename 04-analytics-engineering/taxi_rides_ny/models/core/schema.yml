@@ -17,16 +17,13 @@ models:
         tests:
             - not_null:
                 severity: error
-      
+
   - name: fact_trips
-    description: >
-      Taxi trips corresponding to both service zones (Green and yellow).
-      The table contains records where both pickup and dropoff locations are valid and known zones. 
-      Each record corresponds to a trip uniquely identified by tripid. 
+    description: ""
     columns:
       - name: tripid
         data_type: string
-        description: "unique identifier conformed by the combination of vendorid and pickup time"
+        description: ""
 
       - name: vendorid
         data_type: int64
@@ -73,7 +70,7 @@ models:
         description: ""
 
       - name: store_and_fwd_flag
-        data_type: string
+        data_type: boolean
         description: ""
 
       - name: passenger_count
