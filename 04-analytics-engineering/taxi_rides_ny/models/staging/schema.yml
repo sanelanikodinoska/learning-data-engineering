@@ -35,7 +35,7 @@ models:
         description: ""
         tests: 
           - relationships:
-              to: ref('tazi_zone_lookup')
+              to: ref('taxi_zone_lookup')
               field: locationid
               severity: warn
 
@@ -44,7 +44,7 @@ models:
         description: ""
         tests: 
           - relationships:
-              to: ref('tazi_zone_lookup')
+              to: ref('taxi_zone_lookup')
               field: locationid
               severity: warn
 
