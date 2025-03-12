@@ -34,6 +34,16 @@ select unioned.tripid,
     dropoff_zone.borough as dropoff_borough, 
     dropoff_zone.zone as dropoff_zone,  
     unioned.pickup_datetime, 
+    EXTRACT(YEAR FROM unioned.pickup_datetime) as year,
+    EXTRACT(QUARTER FROM unioned.pickup_datetime) as quarter,
+    CONCAT(cast(EXTRACT(YEAR FROM unioned.pickup_datetime) as string), '/', 
+        case 
+            when EXTRACT(QUARTER FROM unioned.pickup_datetime)  = 1 then 'Q1'
+            when EXTRACT(QUARTER FROM unioned.pickup_datetime)  = 2 then 'Q2'
+            when EXTRACT(QUARTER FROM unioned.pickup_datetime)  = 3 then 'Q3'
+            else "Q4"
+            end) as year_quarter, 
+    EXTRACT(MONTH FROM unioned.pickup_datetime) as month,
     unioned.dropoff_datetime, 
     unioned.store_and_fwd_flag, 
     unioned.passenger_count, 

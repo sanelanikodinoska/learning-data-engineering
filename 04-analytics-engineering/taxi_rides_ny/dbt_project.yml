@@ -35,10 +35,10 @@ clean-targets: # directories to be removed by `dbt clean`
 
 models:
   ny_taxi_dbt_project:
-    +database: ninth-bonito-450722-t0
-    +schema: trips_data_all
+    
 
 
 vars: 
   payment_type_values: [1,2,3,4,5,6]
+ 
   
